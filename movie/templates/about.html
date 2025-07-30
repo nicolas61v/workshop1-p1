@@ -1,1 +1,25 @@
-<h1>Welcome to About Page</h1>
+
+{% extends 'base.html' %}
+
+{% block title %}About | Movie Reviews{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="display-4 mb-4">About Us</h1>
+            <p class="lead">Welcome to our movie review platform, a project developed for the Web Development course at EAFIT University. This application is a practical exercise in building a web system using Django, where we explore how to create a dynamic, database-driven site.</p>
+            <p>Our platform allows users to search for movies, view details, and read reviews. It is designed to be a simple yet powerful tool for movie enthusiasts who want to discover new films and share their opinions with a community of like-minded individuals.</p>
+            <hr class="my-5">
+            <div class="text-center">
+                <p><strong>Developed by:</strong></p>
+                <p>vasquez</p>
+                <p><strong>Course:</strong></p>
+                <p>Web Development - ST0251</p>
+                <p><strong>University:</strong></p>
+                <p>EAFIT University</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
