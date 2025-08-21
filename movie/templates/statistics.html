@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Statistics - Movie Reviews{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Movie Statistics</h1>
+    <p class="text-muted">Visual analysis of movies by year and genre</p>
+    
+    <div class="row justify-content-center mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="data:image/png;base64,{{ graphic }}" class="img-fluid" alt="Movies Statistics">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        <a href="{% url 'home' %}" class="btn btn-secondary">← Back to Home</a>
+    </div>
+</div>
+{% endblock %}

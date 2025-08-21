@@ -24,7 +24,9 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', movieViews.home, name='home'),
-    path('about/', movieViews.about),
+    path('about/', movieViews.about, name='about'),
+    path('news/', include('news.urls')),
+    path('statistics/', movieViews.statistics_view, name='statistics'),
     path('signup/', movieViews.signup, name='signup'),
     path('movie/<int:movie_id>', movieViews.detail, name='detail'),
     path('movie/<int:movie_id>/createreview', movieViews.createreview, name='createreview'),

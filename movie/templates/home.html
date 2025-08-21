@@ -21,12 +21,20 @@
         {% for movie in movies %}
             <div class="col">
                 <div class="card h-100">
-                    <img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}">
-                    <div class="card-body">
+                    <div style="height: 300px; overflow: hidden;">
+                        <img src="{{ movie.image.url }}" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="{{ movie.title }}">
+                    </div>
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ movie.title }}</h5>
-                        <p class="card-text">{{ movie.description }}</p>
+                        <p class="card-text flex-grow-1">{{ movie.description }}</p>
+                        {% if movie.genre %}
+                            <p class="mb-1"><strong>Genre:</strong> {{ movie.genre }}</p>
+                        {% endif %}
+                        {% if movie.year %}
+                            <p class="mb-2"><strong>Year:</strong> {{ movie.year }}</p>
+                        {% endif %}
                         {% if movie.url %}
-                            <a href="{{ movie.url }}" class="btn btn-outline-primary btn-sm">View Movie</a>
+                            <a href="{{ movie.url }}" class="btn btn-outline-primary btn-sm mt-auto">View Movie</a>
                         {% endif %}
                     </div>
                 </div>
